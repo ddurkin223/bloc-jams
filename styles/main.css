@@ -14,6 +14,10 @@ html {
      min-height: 100%; /* says the height of the body must be, at minimum, 100% of the window */
  }
 
+ body.landing {
+     background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
+ }
+
  .navbar {
      padding: 0.5rem;
      background-color: rgb(101,18,95);
@@ -22,10 +26,6 @@ html {
  .navbar .logo {
      position: relative; /* positioning will be explained in a resource */
      left: 2rem;
- }
-
- body.landing {
-     background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
  }
 
  .container {
