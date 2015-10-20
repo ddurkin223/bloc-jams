@@ -18,7 +18,12 @@ html {
      background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
  }
 
- .navbar {
+ .container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+
+.navbar {
      padding: 0.5rem;
      background-color: rgb(101,18,95);
  }
@@ -26,11 +31,6 @@ html {
  .navbar .logo {
      position: relative; /* positioning will be explained in a resource */
      left: 2rem;
- }
-
- .container {
-     margin: 0 auto;
-     max-width: 64rem;
  }
 
 .clearfix:before,
