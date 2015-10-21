@@ -23,9 +23,9 @@
      text-shadow: 1px 1px 0px rgb(58,23,63); /* creates a shadow underneath the text for readability over the image */
  }
 
-  .ion-music-note,
- .ion-radio-waves,
- .ion-iphone {
+.ion-music-note,
+.ion-radio-waves,
+.ion-iphone {
      color: rgb(233,50,117);
      font-size: 5rem;
  }
