@@ -28,15 +28,15 @@
 .ion-iphone {
 	color: rgb(233,50,117);
 	font-size: 5rem;
-	-webkit-transition: font-size 0.5s ease-in 1.25s;
-	-moz-transition: font-size 0.5s ease-in 1.25s;
-	transition: font-size 1.5s ease-in;
+	-webkit-transition: font-size 0.5s ease-in-out;
+	-moz-transition: font-size 0.5s ease-in-out;
+	transition: font-size 0.5s ease-in-out;
 }
 
 .ion-music-note:hover,
 .ion-radio-waves:hover,
 .ion-iphone:hover{
-	font-size: 10rem;
+	font-size: 8rem;
 }
 
 .selling-points {
@@ -46,8 +46,8 @@
 .point {
 	position: relative;
 	padding: 2rem;
+	width: inherit;
 	text-align: center;
-	width:33%
 	margin: auto;
 
 	-webkit-transform: scaleX(0.9) translateY(0.5rem);
@@ -58,29 +58,25 @@
 	-moz-transition: width 2.5s ease-in-out 0s;
 	transition: width 2.5s ease-in-out 0s;
 
-	animation: all 5s ease-in-out 5.0s infinite;
-}
-
-.point:hover{
-	width: 66%;
+	animation: all 7s ease-in-out 0s 1;
 }
 
 @keyframes all {
 	0% {
 		background-color: rgb(58,23,63);
-		opacity: 1;
 		top: 0px;
 		color: white;
 	}
-	20%{
-		opacity: 0.2;
-	}
-	100%{
+	40%{
 		background-color: #FFF;
-		opacity: 1;
 		color: rgb(233,50,117);
 		top: 100px;
-		transform: scale(0.75);
+		transform: scale(0.45);
+	}
+	100%{
+		background-color: rgb(58,23,63);
+		color: white;
+		top: 0px;
 	}
 }
 
