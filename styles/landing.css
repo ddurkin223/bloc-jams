@@ -48,6 +48,7 @@
 	padding: 1rem;
 	text-align: center;
 	margin: auto;
+	opacity: 0;
 
 	-webkit-transform: scaleX(0.9) translateY(0.5rem);
 	-moz-transform: scaleX(0.9) translateY(0.5rem);
@@ -61,12 +62,14 @@
 		background-color: rgb(58,23,63);
 		top: 0px;
 		color: white;
+		opacity: 0;
 	}
 	40%{
 		background-color: #FFF;
 		color: rgb(233,50,117);
 		top: 100px;
 		transform: scale(0.45);
+		opacity: 1;
 	}
 	100%{
 		background-color: rgb(58,23,63);
