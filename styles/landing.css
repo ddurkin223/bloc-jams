@@ -58,23 +58,14 @@
 }
 
 @keyframes all {
-	0% {
-		background-color: rgb(58,23,63);
-		top: 0px;
-		color: white;
+	from {
+		top: 150px;
 		opacity: 0;
+		transform: scale(0.4)
 	}
-	40%{
-		background-color: #FFF;
-		color: rgb(233,50,117);
-		top: 100px;
-		transform: scale(0.45);
-		opacity: 1;
-	}
-	100%{
-		background-color: rgb(58,23,63);
-		color: white;
+	to {
 		top: 0px;
+		opacity: 1;
 	}
 }
 
