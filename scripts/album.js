@@ -1,5 +1,5 @@
 var albumPicasso = {
-name: 'The Colors',
+	name: 'The Colors',
 	artist: 'Pablo Picasso',
 	label: 'Cubism',
 	year: '1881',
@@ -49,23 +49,23 @@ var albumDivers = {
 	]
 };
 
-var createSongRow = function(songNumber, songName, songLength) {
+var createSongRow = function (songNumber, songName, songLength) {
 	var template =
 		'<tr class="album-view-song-item">'
-	+ 		'<td class="song-item-number" data-song-number="'+songNumber +'">' + songNumber + '</td>'
-	+		'<td class="song-item-title">' + songName + '</td>'
-	+		'<td class="song-item-duration">' + songLength + '</td>'
-	+	'</tr>';
+		+		'<td class="song-item-number" data-song-number="'+songNumber +'">' + songNumber +  '</td>'
+		+		'<td class="song-item-title">' + songName + '</td>'
+		+		'<td class="song-item-duration">' + songLength + '</td>'
+		+	'</tr>';
 
 	return template;
 };
 
-var setCurrentAlbum = function(album) {
+var setCurrentAlbum = function (album) {
 	var albumTitle = document.getElementsByClassName('album-view-title')[0];
-	var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-	var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-	var albumImage = document.getElementsByClassName('album-cover-art')[0];
-	var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+		albumArtist = document.getElementsByClassName('album-view-artist')[0];
+		albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+		albumImage = document.getElementsByClassName('album-cover-art')[0];
+		albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
 	albumTitle.firstChild.nodeValue = album.name;
 	albumArtist.firstChild.nodeValue = album.artist;
@@ -76,6 +76,38 @@ var setCurrentAlbum = function(album) {
 
 	for (var i = 0, len = album.songs.length; i < len; i++) {
 		albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
+	}
+};
+
+var findParentByClassName = function (currentElement, targetClass){
+	var parent = currentElement.parentElement;
+	
+	while(parent.className !== targetClass){
+		parent = parent.parentElement;
+	}
+	
+	return parent;
+};
+
+var getSongItem = function (targetElement){
+
+	switch(targetElement.className){
+		case: 'ion-play'
+		case: 'ion-pause'
+		case: 'album-song-button'
+			return findParentByClassName(targetElement,'song-item-number');
+			break;
+		case: 'album-view-song-item'
+			return targetElement.querySelector('.song-item-number');
+			break;
+		case: 'song-item-title'
+		case: 'song-item-duration'
+			return findParentByClassName(targetElement,'album-view-song-item').querySelector('.song-item-number');
+			break;
+		case: 'song-item-number'
+			return targetElement;
+		default:
+			return;
 	}
 };
 
