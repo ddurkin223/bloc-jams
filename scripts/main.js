@@ -1,3 +1,4 @@
+/*
 var navLinks = 
 	[
 		{name: 'collection', url: 'collection.html'},
@@ -36,3 +37,5 @@ for(var i= 0, navLen = navLinks.length; i<navLen; i++){
 nav.appendChild(linksContainer);
 
 document.body.insertBefore(nav, document.querySelector(".album-view.container.narrow"));
+
+*/
