@@ -68,7 +68,7 @@ body.album{
 .album-song-button:hover {
 	cursor: pointer;
 	color:#fff;
-	background-color: rgn(210.40,123);
+	background-color: rgb(210,40,123);
 }
 
 .album-song-button span{
