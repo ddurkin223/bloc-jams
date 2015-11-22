@@ -139,19 +139,16 @@ var currentlyPlayingSong = null;
 
 window.onload = function() {
 	var allAlbums = [albumPicasso,albumMarconi,albumDivers];
-		count = 0;
-		totalAlbums = allAlbums.length - 1;
+	var count = 0;
+	var totalAlbums = allAlbums.length - 1;
 	
 	setCurrentAlbum(allAlbums[count]);
 
 	songListContainer.addEventListener('mouseover', function(event){
-		if(event.target.parentElement.className === 'album-view-song-item'){
-			event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
-			var songItem = getSongItem(event.target);
-			
-			if(songItem.getAttribute('data-song-number') !== currentlyPlayingSong){
-				songItem.innerHTML = playButtonTemplate
-			}
+		var songItem = getSongItem(event.target);
+		
+		if(songItem.parentElement.className === 'album-view-song-item' && songItem.getAttribute('data-song-number') !== currentlyPlayingSong){
+				songItem.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
 		}
 	});
 	
