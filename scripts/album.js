@@ -52,10 +52,10 @@ var albumDivers = {
 var createSongRow = function (songNumber, songName, songLength) {
 	var template =
 		'<tr class="album-view-song-item">'
-		+		'<td class="song-item-number" data-song-number="' + songNumber +'">' + songNumber +  '</td>'
-		+		'<td class="song-item-title">' + songName + '</td>'
-		+		'<td class="song-item-duration">' + songLength + '</td>'
-		+	'</tr>';
+	+		'<td class="song-item-number" data-song-number="' + songNumber +'">' + songNumber +  '</td>'
+	+		'<td class="song-item-title">' + songName + '</td>'
+	+		'<td class="song-item-duration">' + songLength + '</td>'
+	+	'</tr>';
 
 	return template;
 };
@@ -79,14 +79,24 @@ var setCurrentAlbum = function (album) {
 	}
 };
 
-var findParentByClassName = function (currentElement, targetClass){
-	var parent = currentElement.parentElement;
+var findParentByClassName = function (currentElement, targetClass){	
+	var currentParent = currentElement.parentElement;
 	
-	while(parent.className !== targetClass){
-		parent = parent.parentElement;
+	if(currentParent) {
+		while(currentParent.className && currentParent.className !== targetClass){
+			currentParent = currentParent.parentElement;
+		}
+		
+		if(currentParent.className === targetClass){
+			return currentParent;
+		}
+		else {
+			alert("No parent found with that class name.");
+		}
 	}
-	
-	return parent;
+	else {
+		alert("No parent found.");
+	}
 };
 
 var getSongItem = function (targetElement){
