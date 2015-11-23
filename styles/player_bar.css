@@ -178,7 +178,7 @@
 		display: none;
 	}
 	
-	.player-bar .artist-song-mobile{
+	.player-bar .currently-playing .artist-song-mobile {
 		display: block;
 	}
 	
