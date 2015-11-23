@@ -39,7 +39,7 @@ var albumDivers = {
 		{ name: 'Sapokanikan', length: '5:11' },
 		{ name: 'Leaving the City', length: '3:48' },
 		{ name: 'Goose Eggs', length: '5:01' },
-		{ name: 'Walktz of the 101st Lightborne', length: '5:22' },
+		{ name: 'Waltz of the 101st Lightborne', length: '5:22' },
 		{ name: 'The Things I Say', length: '2:25' },
 		{ name: 'Divers', length: '7:07' },
 		{ name: 'Same Old Man', length: '2:26' },
