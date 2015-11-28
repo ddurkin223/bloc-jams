@@ -1,5 +1,6 @@
-var collectionItemTemplate = 
-    '<div class = "collection-album-container column fourth">'
+var buildCollectionItemTemplate = function () {
+	var template = 
+	'<div class = "collection-album-container column fourth">'
 +	'	<img src="assets/images/album_covers/01.png" alt="Album 1">'
 +	'	<div class="collection-album-info caption">'
 +	'		<p>'
@@ -9,17 +10,19 @@ var collectionItemTemplate =
 +	'			<br/>'
 +	'			X songs'
 +	'		</p>'
-+	''
 +	'	</div>'
-+	'</div>'
-;
++	'</div>';
 
-window.onload = function () {
-	var collectionContainer = document.getElementsByClassName('album-covers')[0];
+	return $(template);
+};
+
+$(window).load(function(){
+	var numAlbums = 12;
+	var $collectionContainer = $('.album-covers');
+	$collectionContainer.empty();
 	
-	collectionContainer.innerHTML = "";
-	
-	for (var i = 0; i < 12; i++){
-		collectionContainer.innerHTML += collectionItemTemplate;
+	for (var i = 0; i< numAlbums; i++){
+		var $newThumb = buildCollectionItemTemplate();
+		$collectionContainer.append($newThumb);
 	}
-}
+});
