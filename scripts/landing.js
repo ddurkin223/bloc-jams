@@ -1,23 +1,24 @@
-var pointArray = document.getElementsByClassName('point');
+var animatePoints = function () {
+	var revealPoint = function(){
+		$(this).css({
+			opacity: 1,
+			animation: "all 1.5s ease-in-out 0s 1"
+		});
+	};
+	
+	$.each($('.point'), revealPoint);
+};
 
-var animatePoints = function (points) {
-	for (var i = 0, len = points.length; i<len;i++) {
-		points[i].style.animation = "all 1.5s ease-in-out 0s 1";
-		points[i].style.opacity = "1";
-	}
-}
-
-window.onload = function () {
-	if(window.innerHeight > 950){
-		animatePoints(pointArray);
+$(window).load(function(){
+	if($(window).height() > 950){
+		animatePoints();
 	}
 	
-	var sellingPoints = document.getElementsByClassName('selling-points')[0];
-	var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 100;
+	var scrollDistance = $('.selling-points').offset().top - $(window).height() + 100;
 	
-	window.addEventListener('scroll', function(event){
-		if(document.body.scrollTop >= scrollDistance){
-			animatePoints(pointArray);
+	$(window).scroll(function(event){
+		if($(window).scrollTop() >= scrollDistance){
+			animatePoints();
 		}
 	});
-}
+});
