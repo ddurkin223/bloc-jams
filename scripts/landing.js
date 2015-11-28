@@ -6,7 +6,7 @@ var animatePoints = function () {
 		});
 	};
 	
-	$.each($('.point'), revealPoint);
+	$('.point').each(revealPoint);
 };
 
 $(window).load(function(){
