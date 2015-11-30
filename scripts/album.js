@@ -72,10 +72,10 @@ var setCurrentAlbum = function (album) {
 	$albumReleaseInfo.text(album.year + ' ' + album.label);
 	$albumImage.attr('src', album.albumArtUrl);
 
-	albumSongList.empty();
+	$albumSongList.empty();
 
 	for (var i = 0, len = album.songs.length; i < len; i++) {
-		var $newRow = createSongRow(i+1, album.songs[i], album.songs[i].length);
+		var $newRow = createSongRow(i+1, album.songs[i].name, album.songs[i].length);
 		$albumSongList.append($newRow);
 	}
 };
@@ -152,7 +152,7 @@ window.onload = function() {
         }
     });
     
-    for (i = 0; i < songRows.length; i++) {
+    for (var i = 0; i < songRows.length; i++) {
         songRows[i].addEventListener('mouseleave', function(event) {
             var songItem = getSongItem(event.target);
             var songItemNumber = songItem.getAttribute('data-song-number');
