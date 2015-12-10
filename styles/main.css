@@ -52,14 +52,12 @@ body.landing {
 	height: 100%;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	/* #4 */
 	vertical-align: middle;
 	color: white;
 	font-size: 0.625rem;
 	letter-spacing: 0.05rem;
 	font-weight: 700;
 	text-transform: uppercase;
-	/* #3 */
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -89,7 +87,7 @@ body.landing {
 
 /* Medium and Large screens (640px) */
 @media (min-width: 40rem) {
-	html { font-size: 112%; }    
+	html { font-size: 112%; }
 
 	.column {
 	    float: left;
@@ -101,7 +99,7 @@ body.landing {
 	.column.half { width: 50%; }
 	.column.third { width: 33.3%; }
 	.column.fourth { width: 25%; }
-	.column.flow-opposite { float: right; }  
+	.column.flow-opposite { float: right; }
 }
 
 /* Large screens (1024px) */

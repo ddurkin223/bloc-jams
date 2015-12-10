@@ -53,8 +53,6 @@
 	-webkit-transform: scaleX(0.9) translateY(0.5rem);
 	-moz-transform: scaleX(0.9) translateY(0.5rem);
 	transform: scaleX(0.9)  scaleY(0.9) translateY(0.5rem);
-	
-	/*animation: all 7s ease-in-out 0s 1;*/
 }
 
 @keyframes all {
