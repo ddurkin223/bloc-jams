@@ -168,6 +168,23 @@ var previousSong = function () {
 	$prevSongCell.html(pauseButtonTemplate);
 };
 
+var updatePlayerBarSong = function () {
+	$('.currently-playing .song-name').text(currentSongFromAlbum.name);
+	$('.currently-playing .artist-name').text(currentAlbum.artist);
+	$('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.name + " - " + currentAlbum.artist);
+	$playPauseButton.html(playerBarPauseButton);
+	setCurrentTimeInPlayerBar(0);
+	setTotalTimeInPlayerBar(currentSongFromAlbum.length);
+};
+
+var setCurrentTimeInPlayerBar = function (currentTime){
+		$('.current-time').text(filterTimeCode(currentTime));
+};
+
+var setTotalTimeInPlayerBar = function(totalTime){
+		$('.total-time').text(filterTimeCode(totalTime));
+};
+
 var updateSeekBarWhileSongPlays = function (){
 	if(currentSoundFile){
 		currentSoundFile.bind('timeupdate', function(event){
@@ -234,29 +251,6 @@ var setUpSeekBars = function(){
 	});
 };
 
-var seek = function (time){
-	if(currentSoundFile){
-		currentSoundFile.setTime(time);
-	}
-}
-
-var updatePlayerBarSong = function () {
-	$('.currently-playing .song-name').text(currentSongFromAlbum.name);
-	$('.currently-playing .artist-name').text(currentAlbum.artist);
-	$('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.name + " - " + currentAlbum.artist);
-	$playPauseButton.html(playerBarPauseButton);
-	setCurrentTimeInPlayerBar(0);
-	setTotalTimeInPlayerBar(currentSongFromAlbum.length);
-};
-
-var setCurrentTimeInPlayerBar = function (currentTime){
-		$('.current-time').text(filterTimeCode(currentTime));
-};
-
-var setTotalTimeInPlayerBar = function(totalTime){
-		$('.total-time').text(filterTimeCode(totalTime));
-};
-
 var filterTimeCode = function (timeInSeconds){
 	var time = parseInt(timeInSeconds);
 	var mins = Math.floor(time / 60);
@@ -283,6 +277,12 @@ var togglePlayFromPlayerBar = function () {
 		currentSoundFile.pause();
 	}
 };
+
+var seek = function (time){
+	if(currentSoundFile){
+		currentSoundFile.setTime(time);
+	}
+}
 
 var setVolume = function (volume){
 	if(currentSoundFile){
